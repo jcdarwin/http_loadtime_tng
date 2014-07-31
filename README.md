@@ -12,6 +12,7 @@ On our Ubuntu 12.04 installation:
     apt-get install wget
     ruby -v
     apt-get install rubygems
+    apt-get install ruby-daemons
     gem install daemons
     apt-get install imagemagick libmagickwand-dev
     gem install rmagick
@@ -49,6 +50,7 @@ Clone and move the `http_loadtime` plugin to the plugins directory:
     cp http_loadtime_tng/http_loadtime /usr/share/munin/plugins/
     cp http_loadtime_tng/http_loadtime_launcher.rb /usr/share/munin/plugins/
     cp http_loadtime_tng/http_loadtime_daemon.rb /usr/share/munin/plugins/
+    chmod a+x /usr/share/munin/plugins/http*
 
 Enable the `http_loadtime` plugin:
 
@@ -58,3 +60,8 @@ Enable the `http_loadtime` plugin:
 Restart Munin node and wait for the munin-node cron job (typically 5 mins):
 
     /etc/init.d/munin-node restart
+
+## Testing
+
+munin-run http_loadtime config
+munin-run http_loadtime

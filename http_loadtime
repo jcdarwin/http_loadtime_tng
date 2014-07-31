@@ -133,10 +133,10 @@ when "config"
     puts "loadtime#{i}.info Load time for #{cururl[:url]}"
     puts "loadtime#{i}.min 0"
     puts "loadtime#{i}.max #{cururl[:max]}"
-    if cururl[:warning] > 0
+    if cururl[:warning] > "0"
       puts "loadtime#{i}.warning #{cururl[:warning]}"
     end
-    if cururl[:critical] > 0
+    if cururl[:critical] > "0"
       puts "loadtime#{i}.critical #{cururl[:critical]}"
     end
     i+=1
