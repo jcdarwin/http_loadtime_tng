@@ -15,7 +15,7 @@
 #
 # Configuration example:
 #
-# [wget_page]
+# [http_loadtime]
 # timeout 30
 # env.names url1 url2
 # env.timeout 20
@@ -56,7 +56,7 @@
 # - wget_opts: various options supplied to the Wget command for the given URL.
 #
 
-DATA_DIR="/var/munin/run/http_loadtime"
+DATA_DIR="/var/run/munin/http_loadtime"
 
 
 # Get the urls from config.

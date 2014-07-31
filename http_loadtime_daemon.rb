@@ -3,7 +3,7 @@ require 'fileutils'
 
 # This is the daemon that periodically checks http loadtimes and records them
 
-DATA_DIR="/var/munin/run/http_loadtime"
+DATA_DIR="/var/run/munin/http_loadtime"
 DEFAULT_SLEEP=35 # time between checking on threads.
 DEFAULT_TIMEOUT=30
 DEFAULT_ERROR_VALUE=60
