@@ -5,7 +5,9 @@ A Webpage loadtime plugin for Munin (forked from [https://github.com/metaltoad/h
 
 Please see https://www.metaltoad.com/blog/keeping-track-page-load-times-munin for more information.
 
-# Preparation
+## Preparation
+
+On our Ubuntu 12.04 installation:
 
     apt-get install wget
     ruby -v
@@ -15,7 +17,7 @@ Please see https://www.metaltoad.com/blog/keeping-track-page-load-times-munin fo
     gem install rmagick
     gem install fileutils
 
-# Configuration
+## Configuration
 
 Configure the Munin `http_loadtime` plugin by adding a file `/etc/munin/plugin-conf.d/http_loadtime` with the following content:
 
@@ -37,7 +39,7 @@ Configure the Munin `http_loadtime` plugin by adding a file `/etc/munin/plugin-c
         env.critical_url1 20
         env.wget_opts_url1 --no-cache --tries=1 --no-check-certificate
 
-# Installation
+## Installation
 
 Clone and move the `http_loadtime` plugin to the plugins directory:
 
