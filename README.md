@@ -65,3 +65,7 @@ Restart Munin node and wait for the munin-node cron job (typically 5 mins):
 
 munin-run http_loadtime config
 munin-run http_loadtime
+
+The actual wget command will look something like the following:
+
+    wget --no-check-certificate --save-headers --no-directories --output-document /var/run/munin/http_loadtime//tmoutput_journalsurf.co.nz --header="Host:journalsurf.co.nz" http://journalsurf.co.nz > /dev/null 2>&1

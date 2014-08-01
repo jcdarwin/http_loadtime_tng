@@ -14,7 +14,7 @@ DEFAULT_JOIN_LINES=true
 DEFAULT_PORTO="http"
 DEFAULT_PORT=80
 DEFAULT_PATH="/"
-DEFAULT_MAX=120
+DEFAULT_MAX=60
 DEFAULT_CRITICAL=30
 DEFAULT_WARNING=25
 
@@ -42,7 +42,7 @@ def get_urls()
     # optional parameters
     thisurl[:warning] = (ENV["warning_#{cururl}"].nil?)?  nil : ENV["warning_#{cururl}"]
     thisurl[:critical] = (ENV["critical_#{cururl}"].nil?)? nil : ENV["critical_#{cururl}"]
-    thisurl[:max] = (ENV["max_#{cururl}"].nil?)? nil : ENV["max_#{cururl}"]
+    thisurl[:max] = (ENV["max"].nil?)? DEFAULT_MAX : ENV["max"]
     thisurl[:port] = (ENV["port_#{cururl}"].nil?)? nil : ENV["port_#{cururl}"]
     thisurl[:path] = (ENV["path_#{cururl}"].nil?)? nil : ENV["path_#{cururl}"]
     thisurl[:wget_post_data] = (ENV["wget_post_data_#{cururl}"].nil?)? nil : ENV["wget_post_data_#{cururl}"]
@@ -106,8 +106,8 @@ loop do
   # load up our defaults
   defaults = get_defaults()
 
-  wget_filename = DATA_DIR + "/wgets.last_run"
-  File.delete(wget_filename);
+  # wget_filename = DATA_DIR + "/wgets.last_run"
+  # File.delete(wget_filename);
 
   # check load times
   urls.each do |cururl|
@@ -158,11 +158,11 @@ loop do
       end
 
       # save the wget command for future reference.
-      begin
-        File.open(wget_filename, "a") {|f| f.write(wget_cmd) }
-      rescue
-        puts "Error saving to file: #{wget_filename}"
-      end
+      #begin
+      #  File.open(wget_filename, "a") {|f| f.write(wget_cmd) }
+      #rescue
+      #  puts "Error saving to file: #{wget_filename}"
+      #end
 
       this.exit
     }
