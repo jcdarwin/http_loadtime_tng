@@ -106,6 +106,9 @@ loop do
   # load up our defaults
   defaults = get_defaults()
 
+  wget_filename = DATA_DIR + "/wgets.last_run"
+  File.delete(wget_filename);
+
   # check load times
   urls.each do |cururl|
     # check to see if we have a thread running already
@@ -153,6 +156,14 @@ loop do
       rescue
         puts "Error saving to file: #{filename}"
       end
+
+      # save the wget command for future reference.
+      begin
+        File.open(wget_filename, "a") {|f| f.write(wget_cmd) }
+      rescue
+        puts "Error saving to file: #{wget_filename}"
+      end
+
       this.exit
     }
   end
