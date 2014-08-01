@@ -76,7 +76,7 @@ def get_urls()
     # optional parameters
     thisurl[:warning] = (ENV["warning_#{cururl}"].nil?)?  0 : ENV["warning_#{cururl}"]
     thisurl[:critical] = (ENV["critical_#{cururl}"].nil?)? 0 : ENV["critical_#{cururl}"]
-    thisurl[:max] = (ENV["max_#{cururl}"].nil?)? nil : ENV["max_#{cururl}"]
+    thisurl[:max] = (ENV["max"].nil?)? DEFAULT_MAX : ENV["max"]
     thisurl[:port] = (ENV["port_#{cururl}"].nil?)? nil : ENV["port_#{cururl}"]
     thisurl[:path] = (ENV["path_#{cururl}"].nil?)? nil : ENV["path_#{cururl}"]
     thisurl[:wget_post_data] = (ENV["wget_post_data_#{cururl}"].nil?)? nil : ENV["wget_post_data_#{cururl}"]
