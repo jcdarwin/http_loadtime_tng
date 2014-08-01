@@ -123,7 +123,7 @@ loop do
       cfg = get_instance_config(cururl,defaults)
 
       # build exec call.
-      wget_cmd = "#{wget_binary} --no-check-certificate --save-headers --no-directories "
+      wget_cmd = "#{wget_binary} --no-cache --no-check-certificate --save-headers --no-directories "
       wget_cmd += "--output-document #{cururl[:wget_output_file]} "
       wget_cmd += "--timeout #{cfg[:timeout]} "
       # post data?

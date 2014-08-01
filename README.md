@@ -68,4 +68,4 @@ munin-run http_loadtime
 
 The actual wget command will look something like the following:
 
-    wget --no-check-certificate --save-headers --no-directories --output-document /var/run/munin/http_loadtime//tmoutput_journalsurf.co.nz --header="Host:journalsurf.co.nz" http://journalsurf.co.nz > /dev/null 2>&1
+    wget --no-cache --no-check-certificate --save-headers --no-directories --output-document /var/run/munin/http_loadtime//tmoutput_journalsurf.co.nz --header="Host:journalsurf.co.nz" http://journalsurf.co.nz > /dev/null 2>&1
